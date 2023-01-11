@@ -12,7 +12,7 @@ class LinkeList{
 public:
     node* head;
 
-    LinkedList()
+    LinkeList()
     {
         head = NULL;
     }
@@ -54,7 +54,7 @@ public:
     }
 
     //Search for a single value
-    void SearchDistinctValue(int value)
+    int SearchDistinctValue(int value)
     {
         node* a = head;
         int index = 0;
@@ -71,7 +71,7 @@ public:
     }
 
     //Search all possible occurrence
-    void SearchAllValue(int value)
+    int SearchAllValue(int value)
     {
         node* a = head;
         int index = 0;
