@@ -9,6 +9,7 @@ public:
 };
 
 class LinkeList{
+public:
     node* head;
 
     LinkedList()
@@ -16,10 +17,28 @@ class LinkeList{
         head = NULL;
     }
 
+    //Creates a new node with data = value and nxt = NULL
+
+    node* CreateNewNode(int value)
+    {
+        node* newnode = new node;
+        newnode -> data = value;
+        newnode -> nxt = NULL;
+        return newnode;
+    }
+
     // Insert new value at Head
     void InsertAtHead(int value)
     {
-
+        node* a = CreateNewNode(value);
+        if(head == NULL)
+        {
+            head = a;
+            return;
+        }
+        //If head is not NULL
+        a->nxt = head;
+        head = a;
     }
 
     //Prints the linked list
@@ -44,7 +63,7 @@ class LinkeList{
 
 int main()
 {
-    LinkedList l;
+    LinkeList l;
 
     l.InsertAtHead(10);
     l.InsertAtHead(30);
