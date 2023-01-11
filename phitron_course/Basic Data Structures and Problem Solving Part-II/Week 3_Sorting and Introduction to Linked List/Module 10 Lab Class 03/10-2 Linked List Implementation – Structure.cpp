@@ -44,19 +44,47 @@ public:
     //Prints the linked list
     void Traverse()
     {
-
+        node* a = head;
+        while(a != NULL)
+        {
+            cout << a->data << " ";
+            a = a->nxt;
+        }
+        cout << "\n";
     }
 
     //Search for a single value
     void SearchDistinctValue(int value)
     {
-
+        node* a = head;
+        int index = 0;
+        while (a!= NULL)
+        {
+            if(a->data == value)
+            {
+                return index;
+            }
+            a = a -> nxt;
+            index++;
+        }
+        return -1;
     }
 
     //Search all possible occurrence
     void SearchAllValue(int value)
     {
-
+        node* a = head;
+        int index = 0;
+        while(a != NULL)
+        {
+            if(a -> data == value)
+            {
+                cout << value << " is found at index " << index << "\n";
+            }
+            a = a->nxt;
+            index++;
+        }
+        return -1;
     }
 
 };
@@ -65,15 +93,26 @@ int main()
 {
     LinkeList l;
 
-    l.InsertAtHead(10);
-    l.InsertAtHead(30);
-    l.InsertAtHead(20);
-    l.InsertAtHead(30);
-
     l.Traverse();
 
-    l.SearchDistinctValue(10);
-    l.SearchDistinctValue(5);
+    l.InsertAtHead(10);
+    l.Traverse();
+
+    l.InsertAtHead(30);
+    l.Traverse();
+
+    l.InsertAtHead(20);
+    l.Traverse();
+
+    l.InsertAtHead(30);
+    l.Traverse();
+
+    cout << "10 is found at " << l.SearchDistinctValue(10) << "\n";
+
+    cout << "5 is found at " << l.SearchDistinctValue(5) << "\n";
+
+    cout << "30 is found at " << l.SearchDistinctValue(30) << "\n";
+
 
     l.SearchAllValue(30);
 
