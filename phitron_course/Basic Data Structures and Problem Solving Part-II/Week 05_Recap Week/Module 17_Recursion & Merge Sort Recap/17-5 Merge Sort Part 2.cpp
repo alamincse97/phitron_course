@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// Time Complexity:- O(n*logn)
+
 vector<int> merge_sort(vector<int>a)
 {
     if(a.size() <= 1)
