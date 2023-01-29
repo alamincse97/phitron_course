@@ -10,4 +10,5 @@ Stack Basic Operation
 8. stack -> they you can't
 9. real life problem solve in stack
 10. calculator:- expretion evoaloute kora (1+2)*3 + 6/7 + (2*3)
+11. last in first out(lifo)
 */
