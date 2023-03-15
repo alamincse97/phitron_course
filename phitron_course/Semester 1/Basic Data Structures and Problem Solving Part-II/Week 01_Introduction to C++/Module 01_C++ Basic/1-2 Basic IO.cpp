@@ -46,7 +46,11 @@ int main()
 
    s = s+s2;
    cout << s << "\n";
-   */
 
+   double x = 3.444444;
+   printf("%.2f", x);
+   cout << setprecision(2) << fixed << x;
+
+   */
    return 0;
 }
