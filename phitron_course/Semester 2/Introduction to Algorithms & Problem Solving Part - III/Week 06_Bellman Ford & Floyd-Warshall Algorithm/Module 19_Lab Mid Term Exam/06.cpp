@@ -1,35 +1,51 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl '\n'
+
 bool isPalindrome(string str)
 {
-  unordered_map<char, int> mp;
-  for (int i = 0; i < str.length(); i++)
-    mp[str[i]]++;
+    unordered_map<char, int> mp;
+    for (int i = 0; i < str.length(); i++)
+        mp[str[i]]++;
 
-  int oddCount = 0;
-  for(auto x: mp){
-    if(x.second % 2 != 0)
-      oddCount++;
-  }
+    int oddCount = 0;
+    for(auto x: mp)
+    {
+        if(x.second % 2 != 0)
+            oddCount++;
+    }
 
-  if((str.length() % 2 == 0 && oddCount == 0) || (str.length() % 2 == 1 && oddCount == 1)) {
-    return true;
-  }
+    if((str.length() % 2 == 0 && oddCount == 0) || (str.length() % 2 == 1 && oddCount == 1))
+    {
+        return true;
+    }
 
-  return false;
+    return false;
 }
 
 int main()
 {
+    optimize();
+
     string s;
     cin >> s;
     bool valid = isPalindrome(s);
 
     if(valid)
-      cout << "YES \n";
+        cout << "YES \n";
     else
-      cout << "NO \n";
+        cout << "NO \n";
 
     return 0;
 }
+/*
+Sample Input:-
+
+babdakkiikkii
+
+Sample Output:-
+YES
+
+*/

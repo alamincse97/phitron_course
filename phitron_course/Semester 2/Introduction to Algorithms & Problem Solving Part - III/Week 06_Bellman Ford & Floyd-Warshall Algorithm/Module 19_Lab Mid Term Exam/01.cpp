@@ -1,59 +1,73 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl '\n'
+
 const int N = 1e5 + 5;
 const long long INF = 1e18;
 
 vector<pair<int, int>> adj_list[N];
 long long dist[N];
 
-bool bellman_ford(int n) {
-  for (int i = 1; i <= n; i++) {
-    for (int node = 1; node <= n; node++) {
-      for(pair<int,int>adj_node: adj_list[node]) {
-        int u = node;
-        int v = adj_node.first;
-        int w = adj_node.second;
+bool bellman_ford(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        for (int node = 1; node <= n; node++)
+        {
+            for(pair<int,int>adj_node: adj_list[node])
+            {
+                int u = node;
+                int v = adj_node.first;
+                int w = adj_node.second;
 
-        if(dist[u] + w < dist[v]) {
-          dist[v] = dist[u] + w;
-          if(i == n) {
-            return true;
-          }
+                if(dist[u] + w < dist[v])
+                {
+                    dist[v] = dist[u] + w;
+                    if(i == n)
+                    {
+                        return true;
+                    }
+                }
+            }
         }
-      }
     }
-  }
 
-  return false;
+    return false;
 }
 
-int main() {
-  ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+int main()
+{
+    optimize();
 
-  int n, m;
-  cin >> n >> m;
+    int n, m;
+    cin >> n >> m;
 
-  for (int i = 1; i <= n; i++)
-    dist[i] = INF;
+    for (int i = 1; i <= n; i++)
+        dist[i] = INF;
 
-  for (int i = 0; i < m; i++) {
-    int u, v, w;
-    cin >> u >> v >> w;
-    adj_list[u].push_back({v, w});
-  }
+    for (int i = 0; i < m; i++)
+    {
+        int u, v, w;
+        cin >> u >> v >> w;
+        adj_list[u].push_back({v, w});
+    }
 
-  bool neg_cycle = false;
+    bool neg_cycle = false;
 
-  neg_cycle = bellman_ford(n);
+    neg_cycle = bellman_ford(n);
 
-  if(neg_cycle) {
-    cout << "YES\n";
-  } else {
-    cout << "NO\n";
-  }
+    if(neg_cycle)
+    {
+        cout << "YES\n";
+    }
+    else
+    {
+        cout << "NO\n";
+    }
 
-  return 0;
+    return 0;
 }
 
 /*

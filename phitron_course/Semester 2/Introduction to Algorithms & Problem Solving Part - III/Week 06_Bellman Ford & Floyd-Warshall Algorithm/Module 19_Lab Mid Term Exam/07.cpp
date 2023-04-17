@@ -1,18 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int sum_rec(int n) {
-  if(n == 0) return 0;
-  return n % 10 + sum_rec(n / 10);
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl '\n'
+
+int sum_of_digit(int n)
+{
+    if (n == 0)
+    {
+        return n;
+    }
+    return (n % 10 + sum_of_digit(n / 10));
 }
 
-int main(){
-  ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+int main()
+{
+    optimize();
+    int n;
+    cin >> n;
 
-  int n;
-  cin >> n;
-  int ans = 0;
-  ans = sum_rec(n);
-  cout << ans << "\n";
-  return 0;
+    int sum = sum_of_digit(n);
+    cout << sum << "\n";
+
+    return 0;
 }
+
+/*
+Sample Input -
+
+     234
+
+Sample Output -
+
+     9
+*/

@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl '\n'
+
 const int N = 1e6;
 
 const long long INF = 1e18;
@@ -10,74 +13,89 @@ vector<pair<int, int>> adj_list[N];
 long long dist[N];
 int vis[N], parent[N];
 
-void dijkstra(int src, int n, int m) {
-  for (int i = 1; i <= n; i++) {
-    dist[i] = INF;
-  }
+void dijkstra(int src, int n, int m)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        dist[i] = INF;
+    }
 
-  dist[src] = 0;
-  priority_queue<pair<int, int>> pq;
-  pq.push({0, src});
+    dist[src] = 0;
+    priority_queue<pair<int, int>> pq;
+    pq.push({0, src});
 
-  while(!pq.empty()) {
-    pair<int, int> head = pq.top();
-    pq.pop();
-    int s_node = head.second;
-    if(!vis[s_node]) {
-      vis[s_node] = 1;
+    while(!pq.empty())
+    {
+        pair<int, int> head = pq.top();
+        pq.pop();
+        int s_node = head.second;
+        if(!vis[s_node])
+        {
+            vis[s_node] = 1;
 
-      for(auto child: adj_list[s_node]) {
-        int child_node = child.first;
-        int cost = child.second;
-        if(dist[child_node] > dist[s_node]  + cost) {
-          dist[child_node] = dist[s_node] + cost;
-          parent[child_node] = s_node;
-          pq.push({-dist[child_node], child_node});
+            for(auto child: adj_list[s_node])
+            {
+                int child_node = child.first;
+                int cost = child.second;
+                if(dist[child_node] > dist[s_node]  + cost)
+                {
+                    dist[child_node] = dist[s_node] + cost;
+                    parent[child_node] = s_node;
+                    pq.push({-dist[child_node], child_node});
+                }
+            }
         }
-      }
     }
-  }
 }
 
-void pathPrint(int dis, int src) {
-  if(!vis[dis]) {
-    cout << -1 << "\n";
-  } else {
-    int cur_node = dis;
-    vector<int> path;
-    while(1) {
-      path.push_back(cur_node);
-      if(cur_node == src)
-        break;
-      cur_node = parent[cur_node];
+void pathPrint(int dis, int src)
+{
+    if(!vis[dis])
+    {
+        cout << -1 << "\n";
     }
+    else
+    {
+        int cur_node = dis;
+        vector<int> path;
+        while(1)
+        {
+            path.push_back(cur_node);
+            if(cur_node == src)
+                break;
+            cur_node = parent[cur_node];
+        }
 
-    reverse(path.begin(), path.end());
-    for(auto it: path) {
-      cout << it << " ";
+        reverse(path.begin(), path.end());
+        for(auto it: path)
+        {
+            cout << it << " ";
+        }
+        cout << "\n";
     }
-    cout << "\n";
-  }
 }
 
-int main() {
-  int n, m;
-  ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-  cin >> n >> m;
+int main()
+{
+    optimize();
 
-  for (int i = 1; i <= m; i++){
-    int u, v, w;
-    cin >> u >> v >> w;
-    adj_list[u].push_back({v, w});
-    adj_list[v].push_back({u, w});
-  }
+    int n, m;
+    cin >> n >> m;
 
-  int src = 1;
-  dijkstra(src, n, m);
+    for (int i = 1; i <= m; i++)
+    {
+        int u, v, w;
+        cin >> u >> v >> w;
+        adj_list[u].push_back({v, w});
+        adj_list[v].push_back({u, w});
+    }
 
-  pathPrint(n, src);
+    int src = 1;
+    dijkstra(src, n, m);
 
-  return 0;
+    pathPrint(n, src);
+
+    return 0;
 }
 /*
 Input:
