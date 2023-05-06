@@ -12,7 +12,7 @@ int dp[N][N];
 
 int main()
 {
-    optimize();
+    optimize
 
     int n;
     cin >> n;
