@@ -27,3 +27,10 @@ operations, especially by a computer.
 ৪. Output – যেভাবে algorithm এর input step হয়ে থাকে, ঠিক সেভাবেই এর output step হওয়া জরুরি। তবে, output অবশই সেটাই আসা জরুরি যার জন্যে আমরা অ্যালগরিদম লিখছি। 
 
 ৫. Effectiveness – Time এবং space এর মাধ্যমে কার্যকারিতার (Effectiveness) অনুমান লাগানো সম্ভব। যদি algorithm কম time এবং space এর মধ্যে লিখা হয়েছে বা কম সময়ে এক্সিকিউট হয়েছে এবং কম স্পেসে রান হয়ে থাকে, এটাকেই এর Effectiveness বলা হবে।
+
+-> This course will follow Topic/Content
+
+1. Graph Theory (Week 1 to 5)
+2. Greedy & Backtracking (Week 6)
+3. Dynamic Programming (Week 7 to 9) 
+
