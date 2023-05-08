@@ -1,0 +1,29 @@
+1. What is an Algorithm
+
+-> An algorithm is a set of instructions for solving a problem or accomplishing a task.
+One common example of an algorithm is a recipe, which consists of specific instructions
+for preparing a dish or meal.
+
+a process or set of rules to be followed in calculations or other problem-solving
+operations, especially by a computer.
+
+-> In computer programming terms, an algorithm is a set of well-defined instructions to solve a particular problem. It takes a set of input(s) and produces the desired output.
+
+-> “Algorithm হলো যেকোনো সমস্যা বা প্রব্লেম (problem) এর সমাধান বের করার একটি স্টেপ বাই স্টেপ প্রক্রিয়া“.
+
+-> 
+অ্যালগরিদম এর বৈশিষ্ট্য – (Characteristics Of Algorithm)
+
+আমরা আগেই আলোচনা করেছি যে, algorithm হলো একটি step by step প্রক্রিয়া।
+
+চলুন, এবার আমরা জেনেনেই অ্যালগরিদম এর বৈশিষ্ট্য গুলোর বিষয়ে। 
+
+১. Unambiguous – যেই অ্যালগরিদম গুলো আপনি লিখবেন সেগুলো স্পষ্ট এবং সঠিক হওয়াটা জরুরি। প্রত্যেক স্টেপ বা লাইন এর কিছু মিনিং হওয়াটা জরুরি। 
+
+২. Finiteness – প্রত্যেক Algorithm কিছু সীমিত steps এর মধ্যে শেষ হয়ে যেতে লাগে। আর প্রত্যেকটি step সীমিত পরিমানে রিপিট (repeat) হতে লাগে।
+
+৩. Input – প্রত্যেকটি algorithm এর মধ্যে O যা O থেকে অধিক সঠিক steps হতে লাগে।
+
+৪. Output – যেভাবে algorithm এর input step হয়ে থাকে, ঠিক সেভাবেই এর output step হওয়া জরুরি। তবে, output অবশই সেটাই আসা জরুরি যার জন্যে আমরা অ্যালগরিদম লিখছি। 
+
+৫. Effectiveness – Time এবং space এর মাধ্যমে কার্যকারিতার (Effectiveness) অনুমান লাগানো সম্ভব। যদি algorithm কম time এবং space এর মধ্যে লিখা হয়েছে বা কম সময়ে এক্সিকিউট হয়েছে এবং কম স্পেসে রান হয়ে থাকে, এটাকেই এর Effectiveness বলা হবে।
